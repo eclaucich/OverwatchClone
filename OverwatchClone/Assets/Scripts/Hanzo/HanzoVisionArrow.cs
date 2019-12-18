@@ -1,0 +1,10 @@
+﻿
+/// <summary>
+/// FUNCIONAMIENTO DE LA FLECHA DE VISIÓN DE HANZO
+/// 
+/// HEREDA DE LA FLECHA DE HANZO, FUNCIONA IGUAL, LO ÚNICO QUE CAMBIA ES EL EFECTO CUANDO COLISIONA
+/// </summary>
+
+public class HanzoVisionArrow : HanzoArrow {
+
+}
