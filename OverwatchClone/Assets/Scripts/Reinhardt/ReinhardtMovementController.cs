@@ -20,6 +20,14 @@ public class ReinhardtMovementController : PlayerMovementController {
         }
         else                                                                        //SI ESTA DASHEANDO, SOLAMENTE MOVER EL PERSONAJE (NO SE PUEDE HACER NADA MIENTRAS SE DASHEA)
         {
+            Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f).normalized;       //OBTENER INPUT DEL TECLADO
+
+            direction = transform.TransformDirection(direction);                                                                //TRANSFORMAR DIRECCIÓN RELATIVO A AL MUNDO
+
+            Vector3 velocity = direction * movementVelocity * 0.5f;                 // CUANDO TIRA EL DASH SE PUEDE MOVER UN POCO HACIA LOS COSTADOS
+
+            characterController.Move(velocity * Time.deltaTime);    
+
             characterController.Move(currentImpact * Time.deltaTime);
         }
     }
